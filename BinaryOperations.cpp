@@ -39,6 +39,19 @@ vector<int> int_to_binary(int num)
 
     return ans ;
 }
+// Converting binary to integer - Vinayak
+int binary_to_int(vector<int> a)
+{
+    int ans = 0;
+
+    for(int i=a.size()-1;i>0;i--)
+    {
+        ans = ans*2 + a[i];
+    }
+
+    return ans;
+
+}
 
 // Adding two binary numbers given in vectors - Vinayak
 vector<int> add_binary(vector<int> a, vector<int> b)
