@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std ;
 
-
+// Function takes twos complenent -- Aditya
 vector<int> twosComplement(vector<int> &ans)
 {
     int carry = 1 ;
@@ -17,7 +17,7 @@ vector<int> twosComplement(vector<int> &ans)
     return ans ;
 }
 
-
+// Function converts int to binary -- Aditya
 vector<int> int_to_binary(int num)
 {
     vector<int> ans(32) ;
@@ -39,6 +39,7 @@ vector<int> int_to_binary(int num)
 
     return ans ;
 }
+
 // Converting binary to integer - Vinayak
 int binary_to_int(vector<int> a)
 {
@@ -110,6 +111,7 @@ vector<int> substract_binary(vector<int> a, vector<int> b)
 
 int main() {
 
+    // Taking inputs -- Aditya
     int a,b ;
     cin >> a>>b ;
 
