@@ -68,7 +68,7 @@ vector<int> add_binary(vector<int> a, vector<int> b)
 // Substracting two numbers - Vinayak
 vector<int> substract_binary(vector<int> a, vector<int> b)
 {
-    vector<int> b_new = two_complement(b);
+    vector<int> b_new = twosComplement(b);
     return add_binary(a,b_new);
 }
 
