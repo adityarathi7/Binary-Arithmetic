@@ -69,6 +69,12 @@ vector<int> add(vector<int> a,vector<int> b)
     return ans ;
 }
 
+// Added subtract function -- Aditya
+vector<int> subtract(vector<int> a, vector<int> b)
+{
+    return add(a,b) ;
+}
+
 // Adding two binary numbers given in vectors - Vinayak
 vector<int> add_binary(vector<int> a, vector<int> b)
 {
