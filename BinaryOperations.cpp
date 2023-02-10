@@ -43,16 +43,16 @@ vector<int> int_to_binary(int num)
 // Adding two binary numbers given in vectors - Vinayak
 vector<int> add_binary(vector<int> a, vector<int> b)
 {
-    int n = 32;
+    int n = a.size();
     vector<int> result(n, 0);
 
     int carry = 0;
-    for(int i=2;i>=0;i--)
+    for(int i=n-1;i>=0;i--)
     {
         if(carry==0)
         {
             result[i] = a[i]^b[i];
-            if(result[i]==0 and i!=0) carry = 1;
+            if(result[i]==0 and i!=0 and a[i]==1) carry = 1;
         }
         else
         {
@@ -64,6 +64,7 @@ vector<int> add_binary(vector<int> a, vector<int> b)
 
     return result;
 }
+
 // Substracting two numbers - Vinayak
 vector<int> substract_binary(vector<int> a, vector<int> b)
 {
