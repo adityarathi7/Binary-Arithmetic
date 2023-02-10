@@ -7,7 +7,7 @@ vector<int> twosComplement(int num)
     int j = 0 ;
     while(num)
     {
-        ans[j++] = (num%2)^1 ;
+        ans[j++] = num%2 ;
         num /= 2 ;
     }
 
@@ -15,6 +15,7 @@ vector<int> twosComplement(int num)
 
     for(int i=0;i<32;i++)
     {
+        ans[i] ^= 1 ;
         int temp = ans[i] + carry ;
         ans[i] = (temp)%2 ;
         carry = temp/2 ;
