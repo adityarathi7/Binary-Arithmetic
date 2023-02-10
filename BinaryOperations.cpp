@@ -21,7 +21,7 @@ vector<int> int_to_binary(int num)
 
     return ans ;
 }
-// Adding two binary numbers given in vectors
+// Adding two binary numbers given in vectors - Vinayak
 vector<int> add_binary(vector<int> a, vector<int> b)
 {
     int n = 32;
@@ -45,6 +45,13 @@ vector<int> add_binary(vector<int> a, vector<int> b)
 
     return result;
 }
+// Substracting two numbers - Vinayak
+vector<int> substract_binary(vector<int> a, vector<int> b)
+{
+    vector<int> b_new = two_complement(b);
+    return add_binary(a,b_new);
+}
+
 
 int main() {
 
