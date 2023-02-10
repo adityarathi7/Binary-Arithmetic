@@ -1,16 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std ;
 
-vector<int> twosComplement(int num)
-{
-    vector<int> ans(32) ;
-    int j = 0 ;
-    while(num)
-    {
-        ans[j++] = num%2 ;
-        num /= 2 ;
-    }
 
+vector<int> twosComplement(vector<int> &ans)
+{
     int carry = 1 ;
 
     for(int i=0;i<32;i++)
@@ -21,7 +14,6 @@ vector<int> twosComplement(int num)
         carry = temp/2 ;
     }
 
-    reverse(ans.begin(),ans.end()) ;
     return ans ;
 }
 
@@ -29,22 +21,25 @@ vector<int> twosComplement(int num)
 vector<int> int_to_binary(int num)
 {
     vector<int> ans(32) ;
-    int i=0 ;
-    if(num < 0) 
+    int i=0 , negative = num < 0 ;
+    num = abs(num) ;
+
+    while(num)
     {
-        ans = twosComplement(abs(num)) ;
-    }else {
-        while(num)
-        {
-            ans[i++] = num%2 ;
-            num /= 2 ; 
-        }
-        reverse(ans.begin(),ans.end()) ;
+        ans[i++] = num%2 ;
+        num /= 2 ; 
     }
 
+    if(negative) 
+    {
+        ans = twosComplement(ans) ;
+    }
+
+    reverse(ans.begin(),ans.end()) ;
 
     return ans ;
 }
+
 // Adding two binary numbers given in vectors - Vinayak
 vector<int> add_binary(vector<int> a, vector<int> b)
 {
