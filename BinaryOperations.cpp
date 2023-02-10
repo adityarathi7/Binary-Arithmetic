@@ -1,6 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std ;
 
+vector<int> twosComplement(int num)
+{
+    vector<int> ans(32) ;
+    int j = 0 ;
+    while(num)
+    {
+        ans[j++] = (num%2)^1 ;
+        num /= 2 ;
+    }
+
+    int carry = 1 ;
+
+    for(int i=0;i<32;i++)
+    {
+        int temp = ans[i] + carry ;
+        ans[i] = (temp)%2 ;
+        carry = temp/2 ;
+    }
+
+    reverse(ans.begin(),ans.end()) ;
+    return ans ;
+}
+
 
 vector<int> int_to_binary(int num)
 {
@@ -8,7 +31,7 @@ vector<int> int_to_binary(int num)
     int i=0 ;
     if(num < 0) 
     {
-        cout << "todo" ;
+        ans = twosComplement(abs(num)) ;
     }else {
         while(num)
         {
