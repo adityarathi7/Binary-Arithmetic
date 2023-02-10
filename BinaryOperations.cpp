@@ -53,6 +53,22 @@ int binary_to_int(vector<int> a)
 
 }
 
+// Added Add Function -- Aditya
+vector<int> add(vector<int> a,vector<int> b)
+{
+    int carry = 0 ;
+    reverse(a.begin(),a.end()) ;
+    reverse(b.begin(),b.end()) ;
+    vector<int> ans(32) ;
+    for(int i=0;i<32;i++)
+    {
+        int temp = a[i] + b[i] + carry ;
+        ans[i] = temp%2 ;
+        carry = temp/2 ;
+    }
+    return ans ;
+}
+
 // Adding two binary numbers given in vectors - Vinayak
 vector<int> add_binary(vector<int> a, vector<int> b)
 {
