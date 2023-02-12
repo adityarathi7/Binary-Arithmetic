@@ -85,9 +85,23 @@ vector<int> add(vector<int> a,vector<int> b)
 }
 
 // Added subtract function -- Aditya
-vector<int> subtract(vector<int> a, vector<int> b)
-{
-    return add(a,b) ;
+vector<int> subtract_binary(vector<int> a, vector<int> b) {
+    vector<int> result(32, 0); 
+    int borrow = 0; 
+    
+    for (int i = 31; i >= 0; i--) { 
+      int diff = a[i] - b[i] - borrow; 
+  
+        if (diff >= 0) {
+            result[i] = diff;
+            borrow = 0;
+        } else { 
+            result[i] = diff + 2;
+            borrow = 1;
+        }
+    }
+
+    return result;
 }
 
 // Adding two binary numbers given in vectors - Vinayak
