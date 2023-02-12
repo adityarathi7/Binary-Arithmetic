@@ -118,6 +118,18 @@ vector<int> add(vector<int> a,vector<int> b)
 }
 
 // Added subtract function -- Aditya
+
+/**
+ * @brief Subtracts two binary numbers represented in vector form.
+ * @param a Vector of binary digits representing first number.
+ * @param b Vector of binary digits representing second number.
+ * @return Vector of binary digits representing the difference of two input binary numbers.
+ * 
+ * This function performs subtraction of two binary numbers represented in vector form. The difference is calculated
+ * by starting from the least significant bit and working towards the most significant bit. The borrow is stored and 
+ * used for calculation of the next bit.
+ */
+
 vector<int> subtract_binary(vector<int> a, vector<int> b) {
     vector<int> result(32, 0); 
     int borrow = 0; 
