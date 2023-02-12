@@ -57,6 +57,14 @@ vector<int> int_to_binary(int num)
 }
 
 // Converting binary to integer -- Aditya
+
+/**
+ * Function to convert a binary number to an integer
+ * 
+ * @param a - A binary number represented as a vector of integers.
+ * @return An integer representation of the input binary number.
+ */
+
 int binary_to_int(vector<int> a)
 {
     
