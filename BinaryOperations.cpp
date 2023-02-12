@@ -93,6 +93,15 @@ int binary_to_int(vector<int> a)
 }
 
 // Added Add Function -- Aditya
+
+/**
+ * Function to add two binary numbers
+ * 
+ * @param a - A binary number represented as a vector of integers.
+ * @param b - Another binary number represented as a vector of integers.
+ * @return A vector of integers representing the sum of the two binary numbers.
+ */
+
 vector<int> add(vector<int> a,vector<int> b)
 {
     int carry = 0 ;
