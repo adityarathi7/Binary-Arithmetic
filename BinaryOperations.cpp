@@ -26,6 +26,14 @@ vector<int> twosComplement(vector<int> &ans)
 }
 
 // Function converts int to binary -- Aditya
+
+/**
+ * Function to convert an integer to binary
+ * 
+ * @param num - An integer number to be converted to binary.
+ * @return A vector of integers representing the binary equivalent of the input integer number.
+ */
+
 vector<int> int_to_binary(int num)
 {
     vector<int> ans(32) ;
