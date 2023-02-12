@@ -34,27 +34,43 @@ vector<int> twosComplement(vector<int> &ans)
  * @return A vector of integers representing the binary equivalent of the input integer number.
  */
 
-vector<int> int_to_binary(int num)
+vector<int> int_to_binary(int a)
 {
-    vector<int> ans(32) ;
-    int i=0 , negative = num < 0 ;
-    num = abs(num) ;
+   vector<int> result(32, 0);
+    int i = 31;
+    bool negative = (a < 0);
 
-    while(num)
-    {
-        ans[i++] = num%2 ;
-        num /= 2 ; 
+    if (negative) {
+        a = -a;
+
+        while (a > 0) {
+            result[i] = a % 2;
+            a /= 2;
+            i--;
+        }
+
+        for (int j = 0; j < 32; j++) {
+            result[j] = result[j] ^ 1;
+        }
+
+        for (int j = 31; j >= 0; j--) {
+            if (result[j] == 0) {
+                result[j] = 1;
+                break;
+            }
+            result[j] = 0;
+        }
+    } else {
+        while (a > 0) {
+            result[i] = a % 2;
+            a /= 2;
+            i--;
+        }
     }
 
-    if(negative) 
-    {
-        ans = twosComplement(ans) ;
-    }
-
-    reverse(ans.begin(),ans.end()) ;
-
-    return ans ;
+    return result;
 }
+
 
 // Converting binary to integer -- Aditya
 
@@ -92,7 +108,7 @@ int binary_to_int(vector<int> a)
     }
 }
 
-// Added Add Function -- Aditya
+// Added Add Function --  Vinayak
 
 /**
  * Function to add two binary numbers
