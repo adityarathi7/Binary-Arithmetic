@@ -166,8 +166,20 @@ vector<int> subtract_binary(vector<int> a, vector<int> b) {
     return result;
 }
 
+// Added printBinary function -- Vinayak
 
+/**
+ * @brief Prints binary numbers represented in vector form.
+ * @param a Vector of binary digits representing the number.
+ */
 
+void printBinary(vector<int>a){
+    for(int i =0;i<a.size();i++)
+    {
+        cout<<a[i]<<" ";
+    } 
+    cout<<endl;
+}
 
 
 int main() {
