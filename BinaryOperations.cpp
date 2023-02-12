@@ -2,6 +2,14 @@
 using namespace std ;
 
 // Function takes twos complenent -- Aditya
+
+/**
+ * Function to calculate the two's complement of a binary number.
+ * 
+ * @param ans - A reference to a binary number represented as a vector of integers.
+ * @return A vector of integers representing the two's complement of the input binary number.
+ */
+
 vector<int> twosComplement(vector<int> &ans)
 {
     int carry = 1 ;
