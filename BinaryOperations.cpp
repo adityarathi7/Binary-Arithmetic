@@ -102,20 +102,21 @@ int binary_to_int(vector<int> a)
  * @return A vector of integers representing the sum of the two binary numbers.
  */
 
-vector<int> add(vector<int> a,vector<int> b)
+
+vector<int> add_binary(vector<int> a, vector<int> b)
 {
-    int carry = 0 ;
-    reverse(a.begin(),a.end()) ;
-    reverse(b.begin(),b.end()) ;
-    vector<int> ans(32) ;
-    for(int i=0;i<32;i++)
-    {
-        int temp = a[i] + b[i] + carry ;
-        ans[i] = temp%2 ;
-        carry = temp/2 ;
+    vector<int> result(32, 0);
+    int carry = 0;
+
+    for (int i = 31; i >= 0; i--) {
+        int sum = a[i] + b[i] + carry;
+        carry = sum / 2;
+        result[i] = sum % 2;
     }
-    return ans ;
+
+    return result;
 }
+
 
 // Added subtract function -- Aditya
 
@@ -149,37 +150,8 @@ vector<int> subtract_binary(vector<int> a, vector<int> b) {
     return result;
 }
 
-// Adding two binary numbers given in vectors - Vinayak
-vector<int> add_binary(vector<int> a, vector<int> b)
-{
-    int n = a.size();
-    vector<int> result(n, 0);
 
-    int carry = 0;
-    for(int i=n-1;i>=0;i--)
-    {
-        if(carry==0)
-        {
-            result[i] = a[i]^b[i];
-            if(result[i]==0 and i!=0 and a[i]==1) carry = 1;
-        }
-        else
-        {
-            result[i] = a[i]^b[i]^1;
-            if(a[i]==1 and i!=0) carry = 1;
-            else carry = 0;
-        }
-    }
 
-    return result;
-}
-
-// Substracting two numbers - Vinayak
-vector<int> substract_binary(vector<int> a, vector<int> b)
-{
-    vector<int> b_new = twosComplement(b);
-    return add_binary(a,b_new);
-}
 
 
 int main() {
