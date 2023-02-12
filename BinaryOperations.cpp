@@ -40,18 +40,32 @@ vector<int> int_to_binary(int num)
     return ans ;
 }
 
-// Converting binary to integer - Vinayak
+// Converting binary to integer -- Aditya
 int binary_to_int(vector<int> a)
 {
-    int ans = 0;
+    
+    int result = 0;
+    bool isNegative = !a[0];
 
-    for(int i=a.size()-1;i>0;i--)
-    {
-        ans = ans*2 + a[i];
+    // two's complement if number is negative
+    if (isNegative) {
+        // Flip all the bits
+        for (int i = 0; i < 32; i++) {
+            a[i] = a[i] ^ 1; 
+        }
+        for (int i = 31; i >= 0; i--) {
+            if (a[i] == 0) {
+                a[i] = 1;
+                break;
+            }
+            a[i] = 0;
+        }
     }
-
-    return ans;
-
+    
+    // Binary to decimal
+    for (int i = 0; i < 32; i++) {
+        result += a[i] * pow(2, 31 - i);
+    }
 }
 
 // Added Add Function -- Aditya
